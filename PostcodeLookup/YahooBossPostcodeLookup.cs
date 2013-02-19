@@ -18,6 +18,12 @@ namespace MKS.PostcodeLookupService
             bossResultData.Wait(TimeSpan.FromSeconds(5));
             throw new NotImplementedException();
         }
+        
+        public async Task<IList<PostCodeLookupAddress>> LookupAsync(string postCode)
+        {
+            var bossResultData = await BossQuery(postCode);
+            throw new NotImplementedException();
+        }
 
         private Task<string> BossQuery(string postCode)
         {

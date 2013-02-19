@@ -10,5 +10,6 @@ namespace MKS.PostcodeLookupService.Interfaces
     public interface IPostcodeLookup
     {
         IList<PostCodeLookupAddress> Lookup(string postCode);
+        Task<IList<PostCodeLookupAddress>> LookupAsync(string postCode);
     }
 }

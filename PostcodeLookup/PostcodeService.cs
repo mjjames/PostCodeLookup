@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using MKS.PostcodeLookupService.Interfaces;
 using MKS.PostcodeLookupService.Models;
+using System.Threading.Tasks;
 
 namespace MKS.PostcodeLookupService
 {
@@ -15,7 +16,7 @@ namespace MKS.PostcodeLookupService
             _lookupService = lookupService;
         }
 
-        public IList<PostCodeLookupAddress> LookupPostcode(string postCode)
+        public async Task<IList<PostCodeLookupAddress>> LookupPostcode(string postCode)
         {
             if (string.IsNullOrWhiteSpace(postCode) || postCode.Replace(" ", "").Length > 7 || postCode.Length < 5)
             {
@@ -28,7 +29,7 @@ namespace MKS.PostcodeLookupService
                 throw new ArgumentException("postCode has invalid format");
             }
 
-            return _lookupService.Lookup(postCode);
+            return await _lookupService.LookupAsync(postCode);
         }
     }
 }
