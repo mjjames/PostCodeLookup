@@ -10,17 +10,12 @@ namespace MKS.PostcodeLookupService
     {
         private readonly IPostcodeLookup _lookupService;
 
-        public PostcodeService() : this(new YahooBossPostcodeLookup())
-        {
-            
-        }
-
         public PostcodeService(IPostcodeLookup lookupService)
         {
             _lookupService = lookupService;
         }
 
-        public IList<Address> LookupPostcode(string postCode)
+        public IList<PostCodeLookupAddress> LookupPostcode(string postCode)
         {
             if (string.IsNullOrWhiteSpace(postCode) || postCode.Replace(" ", "").Length > 7 || postCode.Length < 5)
             {
