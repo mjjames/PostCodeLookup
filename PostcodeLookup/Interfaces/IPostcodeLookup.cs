@@ -9,6 +9,6 @@ namespace MKS.PostcodeLookupService.Interfaces
 {
     public interface IPostcodeLookup
     {
-        IList<Address> Lookup(string postCode);
+        IList<PostCodeLookupAddress> Lookup(string postCode);
     }
 }
