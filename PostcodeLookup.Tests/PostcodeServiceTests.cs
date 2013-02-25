@@ -16,43 +16,56 @@ namespace PostcodeLookup.Tests
         public void EmptyPostCodeThrowsArgumentException()
         {
             var mockService = new Mock<IPostcodeLookup>();
-            Assert.Throws<ArgumentException>(() =>
+
+            new PostcodeService(mockService.Object).LookupPostcode("").ContinueWith((result =>
                 {
-                    new PostcodeService(mockService.Object).LookupPostcode("");
-                });
+                    Assert.True(result.IsFaulted);
+                    Assert.IsType<ArgumentException>(result.Exception.Flatten().InnerException);
+                })).Wait();
+
         }
 
         [Fact]
         public void NullPostCodeThrowsArgumentException()
         {
             var mockService = new Mock<IPostcodeLookup>();
-            var exception = Assert.Throws<ArgumentException>(() =>
+
+            new PostcodeService(mockService.Object).LookupPostcode(null).ContinueWith((result =>
             {
-                new PostcodeService(mockService.Object).LookupPostcode(null);
-            });
-            Assert.Equal("invalid postCode provided", exception.Message);
+                Assert.True(result.IsFaulted);
+                Assert.IsType<ArgumentException>(result.Exception.Flatten().InnerException);
+                Assert.Equal("invalid postCode provided", result.Exception.Flatten().InnerException.Message);
+            })).Wait();
+
+
         }
 
         [Fact]
         public void PostCodeTooShortThrowsArgumentException()
         {
             var mockService = new Mock<IPostcodeLookup>();
-            var exception = Assert.Throws<ArgumentException>(() =>
-            {
-                new PostcodeService(mockService.Object).LookupPostcode("12");
-            });
-            Assert.Equal("invalid postCode provided", exception.Message);
+
+            new PostcodeService(mockService.Object).LookupPostcode("12").ContinueWith((result =>
+        {
+            Assert.True(result.IsFaulted);
+            Assert.IsType<ArgumentException>(result.Exception.Flatten().InnerException);
+            Assert.Equal("invalid postCode provided", result.Exception.Flatten().InnerException.Message);
+        })).Wait();
+
         }
 
         [Fact]
         public void PostCodeTooLongThrowsArgumentException()
         {
             var mockService = new Mock<IPostcodeLookup>();
-            var exception = Assert.Throws<ArgumentException>(() =>
-            {
-                new PostcodeService(mockService.Object).LookupPostcode("12345678");
-            });
-            Assert.Equal("invalid postCode provided", exception.Message);
+
+            new PostcodeService(mockService.Object).LookupPostcode("12345678")
+                .ContinueWith((result =>
+                {
+                    Assert.True(result.IsFaulted);
+                    Assert.IsType<ArgumentException>(result.Exception.Flatten().InnerException);
+                    Assert.Equal("invalid postCode provided", result.Exception.Flatten().InnerException.Message);
+                })).Wait();
         }
 
         [Fact]
@@ -155,8 +168,13 @@ namespace PostcodeLookup.Tests
         public void PostCodeNonValidFormatThrowsArgumentException()
         {
             var mockService = new Mock<IPostcodeLookup>();
-            var exception = Assert.Throws<ArgumentException>(() => new PostcodeService(mockService.Object).LookupPostcode("1234567"));
-            Assert.Equal("postCode has invalid format", exception.Message);
+             new PostcodeService(mockService.Object).LookupPostcode("1234567")
+                 .ContinueWith((result =>
+                 {
+                     Assert.True(result.IsFaulted);
+                     Assert.IsType<ArgumentException>(result.Exception.Flatten().InnerException);
+                     Assert.Equal("postCode has invalid format", result.Exception.Flatten().InnerException.Message);
+                 })).Wait();
         }
     }
 }
