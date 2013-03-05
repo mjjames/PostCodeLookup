@@ -69,65 +69,65 @@ namespace PostcodeLookup.Tests
         }
 
         [Fact]
-        public void PostCodeWithWhiteSpaceMakesStringToLongDoesntThrowArgumentException()
+        public async void PostCodeWithWhiteSpaceMakesStringToLongDoesntThrowArgumentException()
         {
             var mockService = new Mock<IPostcodeLookup>();
-            new PostcodeService(mockService.Object).LookupPostcode("AA9A 9AA");
+            await new PostcodeService(mockService.Object).LookupPostcode("AA9A 9AA");
         }
 
         [Fact]
-        public void PostCodeAlphaAlphaDigitAlphaDigitAlphaAlphaFormatWithWhitespaceDoesntThrow()
+        public async void PostCodeAlphaAlphaDigitAlphaDigitAlphaAlphaFormatWithWhitespaceDoesntThrow()
         {
             var mockService = new Mock<IPostcodeLookup>();
-            new PostcodeService(mockService.Object).LookupPostcode("AA9A 9AA");
+            await new PostcodeService(mockService.Object).LookupPostcode("AA9A 9AA");
         }
 
         [Fact]
-        public void PostCodeAlphaDigitAlphaDigitAlphaAlphaFormatWithWhitespaceDoesntThrow()
+        public async void PostCodeAlphaDigitAlphaDigitAlphaAlphaFormatWithWhitespaceDoesntThrow()
         {
             var mockService = new Mock<IPostcodeLookup>();
-            new PostcodeService(mockService.Object).LookupPostcode("A9A 9AA");
+            await new PostcodeService(mockService.Object).LookupPostcode("A9A 9AA");
         }
 
         [Fact]
-        public void PostCodeAlphaDigitDigitAlphaAlphaFormatWithWhitespaceDoesntThrow()
+        public async void PostCodeAlphaDigitDigitAlphaAlphaFormatWithWhitespaceDoesntThrow()
         {
             var mockService = new Mock<IPostcodeLookup>();
-            new PostcodeService(mockService.Object).LookupPostcode("A9 9AA");
+            await new PostcodeService(mockService.Object).LookupPostcode("A9 9AA");
         }
 
         [Fact]
-        public void PostCodeAlphaDigitDigitDigitAlphaAlphaFormatWithWhitespaceDoesntThrow()
+        public async void PostCodeAlphaDigitDigitDigitAlphaAlphaFormatWithWhitespaceDoesntThrow()
         {
             var mockService = new Mock<IPostcodeLookup>();
-            new PostcodeService(mockService.Object).LookupPostcode("A99 9AA");
+            await new PostcodeService(mockService.Object).LookupPostcode("A99 9AA");
         }
         [Fact]
-        public void PostCodeAlphaAlphaDigitDigitAlphaAlphaFormatWithWhitespaceDoesntThrow()
+        public async void PostCodeAlphaAlphaDigitDigitAlphaAlphaFormatWithWhitespaceDoesntThrow()
         {
             var mockService = new Mock<IPostcodeLookup>();
-            new PostcodeService(mockService.Object).LookupPostcode("AA9 9AA");
-        }
-
-        [Fact]
-        public void PostCodeAlphaAlphaDigitDigitDigitAlphaAlphaFormatWithWhitespaceDoesntThrow()
-        {
-            var mockService = new Mock<IPostcodeLookup>();
-            new PostcodeService(mockService.Object).LookupPostcode("AA99 9AA");
+            await new PostcodeService(mockService.Object).LookupPostcode("AA9 9AA");
         }
 
         [Fact]
-        public void PostCodeWithWhiteSpaceMakesStringToLongDoesntThrowWithWhitespaceArgumentException()
+        public async void PostCodeAlphaAlphaDigitDigitDigitAlphaAlphaFormatWithWhitespaceDoesntThrow()
         {
             var mockService = new Mock<IPostcodeLookup>();
-            new PostcodeService(mockService.Object).LookupPostcode("AA9A 9AA");
+            await new PostcodeService(mockService.Object).LookupPostcode("AA99 9AA");
         }
 
         [Fact]
-        public void PostCodeAlphaAlphaDigitAlphaDigitAlphaAlphaFormatWithoutWhitespaceDoesntThrow()
+        public async void PostCodeWithWhiteSpaceMakesStringToLongDoesntThrowWithWhitespaceArgumentException()
         {
             var mockService = new Mock<IPostcodeLookup>();
-            new PostcodeService(mockService.Object).LookupPostcode("AA9A9AA");
+            await new PostcodeService(mockService.Object).LookupPostcode("AA9A 9AA");
+        }
+
+        [Fact]
+        public async void PostCodeAlphaAlphaDigitAlphaDigitAlphaAlphaFormatWithoutWhitespaceDoesntThrow()
+        {
+            var mockService = new Mock<IPostcodeLookup>();
+            await new PostcodeService(mockService.Object).LookupPostcode("AA9A9AA");
         }
 
         [Fact]
@@ -138,30 +138,30 @@ namespace PostcodeLookup.Tests
         }
 
         [Fact]
-        public void PostCodeAlphaDigitDigitAlphaAlphaFormatWithoutWhitespaceDoesntThrow()
+        public async void PostCodeAlphaDigitDigitAlphaAlphaFormatWithoutWhitespaceDoesntThrow()
         {
             var mockService = new Mock<IPostcodeLookup>();
-            new PostcodeService(mockService.Object).LookupPostcode("A99AA");
+            await new PostcodeService(mockService.Object).LookupPostcode("A99AA");
         }
 
         [Fact]
-        public void PostCodeAlphaDigitDigitDigitAlphaAlphaFormatWithoutWhitespaceDoesntThrow()
+        public async void PostCodeAlphaDigitDigitDigitAlphaAlphaFormatWithoutWhitespaceDoesntThrow()
         {
             var mockService = new Mock<IPostcodeLookup>();
-            new PostcodeService(mockService.Object).LookupPostcode("A999AA");
+            await new PostcodeService(mockService.Object).LookupPostcode("A999AA");
         }
         [Fact]
-        public void PostCodeAlphaAlphaDigitDigitAlphaAlphaFormatWithoutWhitespaceDoesntThrow()
+        public async void PostCodeAlphaAlphaDigitDigitAlphaAlphaFormatWithoutWhitespaceDoesntThrow()
         {
             var mockService = new Mock<IPostcodeLookup>();
-            new PostcodeService(mockService.Object).LookupPostcode("AA99AA");
+            await new PostcodeService(mockService.Object).LookupPostcode("AA99AA");
         }
 
         [Fact]
-        public void PostCodeAlphaAlphaDigitDigitDigitAlphaAlphaFormatWithoutWhitespaceDoesntThrow()
+        public async void PostCodeAlphaAlphaDigitDigitDigitAlphaAlphaFormatWithoutWhitespaceDoesntThrow()
         {
             var mockService = new Mock<IPostcodeLookup>();
-            new PostcodeService(mockService.Object).LookupPostcode("AA999AA");
+            await new PostcodeService(mockService.Object).LookupPostcode("AA999AA");
         }
 
         [Fact]
