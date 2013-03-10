@@ -5,8 +5,8 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using DotNetOpenAuth.OAuth;
+using MKS.PostcodeLookup.Core.Models;
 using MKS.PostcodeLookupService.Interfaces;
-using MKS.PostcodeLookupService.Models;
 
 namespace MKS.PostcodeLookupService
 {

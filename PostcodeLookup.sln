@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostcodeLookup.Tests", "Pos
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostcodeLookup", "PostcodeLookup\PostcodeLookup.csproj", "{A70973B4-0974-4A22-9EE7-8146FA453F35}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostcodeLookup.Core", "PostcodeLookup.Core\PostcodeLookup.Core.csproj", "{4BAF4566-A472-4EDD-B219-F4D7D862EF8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{A70973B4-0974-4A22-9EE7-8146FA453F35}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A70973B4-0974-4A22-9EE7-8146FA453F35}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A70973B4-0974-4A22-9EE7-8146FA453F35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BAF4566-A472-4EDD-B219-F4D7D862EF8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BAF4566-A472-4EDD-B219-F4D7D862EF8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BAF4566-A472-4EDD-B219-F4D7D862EF8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BAF4566-A472-4EDD-B219-F4D7D862EF8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MKS.PostcodeLookupService.Models
+namespace MKS.PostcodeLookup.Core.Models
 {
     public class PostCodeLookupAddress : IEquatable<PostCodeLookupAddress>
     {

@@ -4,8 +4,8 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using MKS.PostcodeLookup.Core.Models;
 using MKS.PostcodeLookupService.Interfaces;
-using MKS.PostcodeLookupService.Models;
 
 namespace MKS.PostcodeLookupService
 {
