@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>MKS.PostcodeLookup</id>
+        <version>1.0.0</version>
+        <title>Postcode Lookup</title>
+        <authors>MKSoftware</authors>
+        <owners>MKSoftware</owners>
+        <projectUrl>http://mksoftwaresolutions.co.uk/</projectUrl>
+        <iconUrl>http://mksoftwaresolutions.co.uk/images/mksoftware-110.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Services and abstractions for looking up postcodes via a number of providers</description>
+        <copyright>Copyright MK Software Solutions 2013</copyright>
+        <dependencies>
+            <dependency id="DotNetOpenAuth.Core" version="4.2.1.13026" />
+            <dependency id="DotNetOpenAuth.OAuth.Consumer" version="4.2.1.13026" />
+            <dependency id="DotNetOpenAuth.OAuth.Core" version="4.2.1.13026" />
+            <dependency id="Microsoft.Net.Http" version="2.0.20710.0" />
+            <dependency id="Newtonsoft.Json" version="4.5.11" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="PostcodeLookup\bin\Release\MKS.PostcodeLookup.Core.dll" target="lib\MKS.PostcodeLookup.Core.dll" />
+        <file src="PostcodeLookup\bin\Release\MKS.PostcodeLookup.Core.pdb" target="lib\MKS.PostcodeLookup.Core.pdb" />
+        <file src="PostcodeLookup\bin\Release\MKS.PostcodeLookupService.dll" target="lib\MKS.PostcodeLookupService.dll" />
+        <file src="PostcodeLookup\bin\Release\MKS.PostcodeLookupService.pdb" target="lib\MKS.PostcodeLookupService.pdb" />
+    </files>
+</package>
