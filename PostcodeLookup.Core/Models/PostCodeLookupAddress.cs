@@ -6,6 +6,7 @@ namespace MKS.PostcodeLookup.Core.Models
     {
         public string Address { get; set; }
         public string Town { get; set; }
+        public string City { get; set; }
         public string County { get; set; }
         public string PostCode { get; set; }
 
@@ -13,6 +14,7 @@ namespace MKS.PostcodeLookup.Core.Models
         {
             return String.Equals(Address, other.Address)
             && String.Equals(Town, other.Town)
+            && String.Equals(City, other.City)
             && String.Equals(County, other.County)
             && String.Equals(PostCode, other.PostCode);
         }
@@ -30,6 +32,7 @@ namespace MKS.PostcodeLookup.Core.Models
             hash = (hash * 7) + Address.GetHashCode();
             hash = (hash * 7) + Town.GetHashCode();
             hash = (hash * 7) + County.GetHashCode();
+            hash = (hash * 7) + City.GetHashCode();
             hash = (hash * 7) + PostCode.GetHashCode();
             return hash;
         }
