@@ -56,6 +56,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PostcodeAnywhereUKAddressTests.cs" />
     <Compile Include="PostcodeAnywhereInternationalAddressTests.cs" />
     <Compile Include="PostcodeServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

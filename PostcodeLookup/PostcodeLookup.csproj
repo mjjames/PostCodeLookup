@@ -59,7 +59,10 @@
     <Compile Include="Interfaces\IPostcodeLookup.cs" />
     <Compile Include="Models\PostcodeAnywhereInternationalAddress.cs" />
     <Compile Include="Models\PostCodeAnywhereInternationalLookupResult.cs" />
+    <Compile Include="Models\PostcodeAnywhereUKAddress.cs" />
+    <Compile Include="Models\PostcodeAnywhereUKResult.cs" />
     <Compile Include="PostcodeAnywhereInternationalPostcodeLookup.cs" />
+    <Compile Include="PostcodeAnywhereUKPostcodeLookup.cs" />
     <Compile Include="PostcodeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TabCatPostcodeLookup.cs" />
