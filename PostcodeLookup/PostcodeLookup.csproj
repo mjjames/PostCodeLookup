@@ -57,9 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IPostcodeLookup.cs" />
-    <Compile Include="Models\PostcodeAnywhereAddress.cs" />
-    <Compile Include="Models\PostCodeAnywhereLookupResult.cs" />
-    <Compile Include="PostcodeAnywherePostcodeLookup.cs" />
+    <Compile Include="Models\PostcodeAnywhereInternationalAddress.cs" />
+    <Compile Include="Models\PostCodeAnywhereInternationalLookupResult.cs" />
+    <Compile Include="PostcodeAnywhereInternationalPostcodeLookup.cs" />
     <Compile Include="PostcodeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TabCatPostcodeLookup.cs" />

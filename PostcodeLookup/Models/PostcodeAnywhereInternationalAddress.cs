@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MKS.PostcodeLookupService.Models
+﻿namespace MKS.PostcodeLookupService.Models
 {
-    internal class PostcodeAnywhereAddress
+    internal class PostcodeAnywhereInternationalAddress
     {
         public string StreetId { get; set; }
         public string Description { get; set; }

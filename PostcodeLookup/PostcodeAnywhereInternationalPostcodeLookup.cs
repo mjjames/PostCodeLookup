@@ -11,13 +11,13 @@ using Newtonsoft.Json;
 
 namespace MKS.PostcodeLookupService
 {
-    public class PostcodeAnywherePostcodeLookup : IPostcodeLookup
+    public class PostcodeAnywhereInternationalPostcodeLookup : IPostcodeLookup
     {
         private readonly Uri _serviceUri = new Uri("https://services.postcodeanywhere.co.uk/PostcodeAnywhereInternational/Interactive/RetrieveByPostalCode/v2.20/json3.ws");
         private readonly string _apiKey;
         private const string IsoCode = "GBR";
 
-        public PostcodeAnywherePostcodeLookup(string apiKey)
+        public PostcodeAnywhereInternationalPostcodeLookup(string apiKey)
         {
             _apiKey = Uri.EscapeDataString(apiKey);
         }
@@ -41,7 +41,7 @@ namespace MKS.PostcodeLookupService
             {
                 var queryString = string.Format("?key={0}&country={1}&postalcode={2}", _apiKey, IsoCode, Uri.EscapeDataString(postCode));
                 var response = await client.GetStringAsync(new Uri(_serviceUri, queryString));
-                var result = await JsonConvert.DeserializeObjectAsync<PostCodeAnywhereLookupResult>(response);
+                var result = await JsonConvert.DeserializeObjectAsync<PostCodeAnywhereInternationalLookupResult>(response);
                 return result.Items.Select(a => new PostcodeLookup.Core.Models.PostCodeLookupAddress
                     {
                         Address = a.Street,

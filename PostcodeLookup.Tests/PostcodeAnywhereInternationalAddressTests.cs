@@ -9,7 +9,7 @@ using Xunit;
 
 namespace PostcodeLookup.Tests
 {
-    public class PostcodeAnywhereAddressTests
+    public class PostcodeAnywhereInternationalAddressTests
     {
         private const string TestPostCode = "WR2 6NJ"; //Dev Test PostCode suitable for repetitive testing
         private const string ApiKey = "DA23-CE14-JH99-AW13"; //Dev Test API Key - expires monthly renew accordling
@@ -17,7 +17,7 @@ namespace PostcodeLookup.Tests
         [Fact]
         public async Task TestPostcodeReturnsResults()
         {
-            var service = new PostcodeAnywherePostcodeLookup(ApiKey);
+            var service = new PostcodeAnywhereInternationalPostcodeLookup(ApiKey);
             var result = await service.LookupAsync(TestPostCode);
             Assert.NotEmpty(result);
         }
@@ -25,35 +25,35 @@ namespace PostcodeLookup.Tests
         [Fact]
         public void TestPostcodeDoesntThrowWebException()
         {
-            var service = new PostcodeAnywherePostcodeLookup(ApiKey);
+            var service = new PostcodeAnywhereInternationalPostcodeLookup(ApiKey);
             AssertEx.TaskDoesNotThrow<WebException>(async () => await service.LookupAsync(TestPostCode));
         }
 
         [Fact]
         public void TestPostcodeDoesntThrowJsonReaderException()
         {
-            var service = new PostcodeAnywherePostcodeLookup(ApiKey);
+            var service = new PostcodeAnywhereInternationalPostcodeLookup(ApiKey);
             AssertEx.TaskDoesNotThrow<JsonReaderException>(async () => await service.LookupAsync(TestPostCode));
         }
 
         [Fact]
         public void TestPostcodeDoesntThrowJsonSerialisationException()
         {
-            var service = new PostcodeAnywherePostcodeLookup(ApiKey);
+            var service = new PostcodeAnywhereInternationalPostcodeLookup(ApiKey);
             AssertEx.TaskDoesNotThrow<JsonSerializationException>(async () => await service.LookupAsync(TestPostCode));
         }
 
         [Fact]
         public void TestPostcodeDoesntThrowAnyException()
         {
-            var service = new PostcodeAnywherePostcodeLookup(ApiKey);
+            var service = new PostcodeAnywhereInternationalPostcodeLookup(ApiKey);
             AssertEx.TaskDoesNotThrow<AggregateException>(async () => await service.LookupAsync(TestPostCode));
         }
 
         [Fact]
         public async Task TestPostcodeReturnsFirstAddressLine()
         {
-            var service = new PostcodeAnywherePostcodeLookup(ApiKey);
+            var service = new PostcodeAnywhereInternationalPostcodeLookup(ApiKey);
             var result = await service.LookupAsync(TestPostCode);
             var address = result.First();
             Assert.Equal("Moseley Road", address.Address);
@@ -62,7 +62,7 @@ namespace PostcodeLookup.Tests
         [Fact]
         public async Task TestPostcodeReturnsCityAddressLine()
         {
-            var service = new PostcodeAnywherePostcodeLookup(ApiKey);
+            var service = new PostcodeAnywhereInternationalPostcodeLookup(ApiKey);
             var result = await service.LookupAsync(TestPostCode);
             var address = result.First();
             Assert.Equal("Worcester", address.City);
@@ -71,7 +71,7 @@ namespace PostcodeLookup.Tests
         [Fact]
         public async Task TestPostcodeReturnsCountyAddressLine()
         {
-            var service = new PostcodeAnywherePostcodeLookup(ApiKey);
+            var service = new PostcodeAnywhereInternationalPostcodeLookup(ApiKey);
             var result = await service.LookupAsync(TestPostCode);
             var address = result.First();
             Assert.Equal("Worcestershire", address.County);
@@ -80,7 +80,7 @@ namespace PostcodeLookup.Tests
         [Fact]
         public async Task TestPostcodeReturnsPostcodeAddressLine()
         {
-            var service = new PostcodeAnywherePostcodeLookup(ApiKey);
+            var service = new PostcodeAnywhereInternationalPostcodeLookup(ApiKey);
             var result = await service.LookupAsync(TestPostCode);
             var address = result.First();
             Assert.Equal("WR2 6NJ", address.PostCode);
@@ -89,7 +89,7 @@ namespace PostcodeLookup.Tests
         [Fact]
         public async Task TestPostcodeReturnsTownAddressLine()
         {
-            var service = new PostcodeAnywherePostcodeLookup(ApiKey);
+            var service = new PostcodeAnywhereInternationalPostcodeLookup(ApiKey);
             var result = await service.LookupAsync(TestPostCode);
             var address = result.First();
             Assert.Equal("Hallow", address.Town);
