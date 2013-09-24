@@ -12,7 +12,7 @@ namespace PostcodeLookup.Tests
     public class PostcodeAnywhereInternationalAddressTests
     {
         private const string TestPostCode = "WR2 6NJ"; //Dev Test PostCode suitable for repetitive testing
-        private const string ApiKey = "DA23-CE14-JH99-AW13"; //Dev Test API Key - expires monthly renew accordling
+        private const string ApiKey = "GZ99-TZ39-XR31-UM99"; //Dev Test API Key - expires monthly renew accordling
 
         [Fact]
         public async Task TestPostcodeReturnsResults()
